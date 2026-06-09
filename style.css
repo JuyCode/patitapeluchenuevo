@@ -1,0 +1,184 @@
+/* --- PALETA DE COLORES Y VARIABLES --- */
+:root {
+    --pink-primary: #ffb7c5;
+    --pink-light: #ffe3e8;
+    --pink-accent: #ff6f91;
+    --text-dark: #4a4a4a;
+    --bg-cream: #fffcf7;
+    --white: #ffffff;
+    --mp-blue: #009ee3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+}
+
+/* --- TRUCO OCULTAR PANTALLAS --- */
+.view-section { transition: opacity 0.3s ease; }
+.view-section.hidden { display: none; }
+
+/* --- ANUNCIO SUPERIOR --- */
+.top-bar {
+    background-color: var(--pink-light);
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 2px dashed var(--pink-primary);
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--white);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(255, 183, 197, 0.2);
+    position: sticky;
+    top: 0; z-index: 100;
+}
+
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-img {
+    width: 50px; height: 50px; border-radius: 50%;
+    background-color: var(--pink-primary);
+    display: flex; justify-content: center; align-items: center; font-size: 1.5rem;
+}
+.logo-text { font-size: 1.6rem; font-weight: bold; color: var(--pink-accent); letter-spacing: 1px; }
+
+.header-actions { display: flex; gap: 20px; }
+.nav-btn { background: none; border: none; color: var(--text-dark); font-size: 1.3rem; cursor: pointer; position: relative; }
+.cart-count {
+    position: absolute; top: -8px; right: -10px; background-color: var(--pink-accent);
+    color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 50%; font-weight: bold;
+}
+
+/* --- HERO BANNER --- */
+.hero {
+    background: linear-gradient(135deg, var(--pink-light) 0%, #ffeef1 100%);
+    border-radius: 24px; padding: 40px; display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 35px; border: 3px solid var(--white);
+    box-shadow: 0 8px 20px rgba(255, 183, 197, 0.15);
+}
+.hero-text h1 { font-size: 2.5rem; color: var(--pink-accent); margin-bottom: 10px; }
+.badge { display: inline-block; background-color: #88d49e; color: white; padding: 6px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; }
+.hero-img-placeholder { width: 150px; height: 150px; background-color: var(--white); border-radius: 30px; display: flex; justify-content: center; align-items: center; font-size: 4rem; box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
+
+/* --- SECCIONES CONTENEDORAS --- */
+.container { padding: 30px 5%; }
+.section-title { font-size: 1.8rem; margin-bottom: 25px; position: relative; display: inline-block; }
+.section-title::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 60px; height: 4px; background-color: var(--pink-primary); border-radius: 2px; }
+
+.back-navigation { margin-bottom: 20px; }
+.back-navigation button { background-color: var(--white); border: 2px solid var(--pink-primary); color: var(--pink-accent); padding: 10px 20px; border-radius: 15px; font-weight: bold; cursor: pointer; transition: all 0.2s; }
+.back-navigation button:hover { background-color: var(--pink-primary); color: white; }
+
+/* --- GRID CATEGORÍAS --- */
+.categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+.category-card { background-color: var(--white); border-radius: 20px; padding: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; }
+.category-card:hover { transform: translateY(-5px); border-color: var(--pink-primary); box-shadow: 0 6px 15px rgba(255, 183, 197, 0.3); }
+.category-img { width: 100%; height: 110px; background-color: var(--pink-light); border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 2.5rem; margin-bottom: 12px; }
+
+/* --- GRID PRODUCTOS --- */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+.product-card { background-color: var(--white); border-radius: 24px; padding: 20px; border: 2px solid var(--pink-light); display: flex; flex-direction: column; justify-content: space-between; }
+.product-img { width: 100%; height: 180px; background-color: #fff9fa; border-radius: 18px; display: flex; justify-content: center; align-items: center; font-size: 4rem; margin-bottom: 15px; }
+.product-price { font-size: 1.4rem; font-weight: bold; color: var(--pink-accent); margin: 10px 0 15px; }
+.btn-add { background-color: var(--pink-primary); color: white; border: none; width: 100%; padding: 12px; border-radius: 15px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+.btn-add:hover { background-color: var(--pink-accent); }
+
+/* --- SIDEBAR CARRITO --- */
+.cart-sidebar {
+    position: fixed; top: 0; right: -400px;
+    width: 100%; max-width: 400px; height: 100%;
+    background-color: var(--white); box-shadow: -5px 0 20px rgba(0,0,0,0.05);
+    z-index: 200; transition: right 0.3s ease;
+    display: flex; flex-direction: column; padding: 25px;
+}
+.cart-sidebar.active { right: 0; }
+.cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid var(--pink-light); padding-bottom: 15px; }
+.close-cart { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+.cart-items { flex-grow: 1; overflow-y: auto; margin-bottom: 15px; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f5f5f5; }
+.remove-item { background: none; border: none; color: #ff4d4d; cursor: pointer; }
+
+/* --- SECCION METODOS DE PAGO --- */
+.payment-section {
+    background-color: #fffafb; border: 1px dashed var(--pink-primary);
+    border-radius: 15px; padding: 15px; margin-bottom: 15px;
+}
+.payment-section h4 { font-size: 0.95rem; margin-bottom: 10px; color: var(--text-dark); }
+.payment-options { display: flex; flex-direction: column; gap: 10px; }
+.payment-option-card {
+    display: flex; align-items: center; gap: 10px; font-size: 0.9rem;
+    cursor: pointer; position: relative; padding: 5px 0;
+}
+.payment-option-card i { color: var(--pink-accent); font-size: 1rem; width: 20px; }
+
+.cart-total { font-size: 1.3rem; font-weight: bold; display: flex; justify-content: space-between; padding: 15px 0; border-top: 2px solid var(--pink-light); }
+.btn-checkout { background-color: #25d366; color: white; border: none; padding: 15px; border-radius: 15px; font-weight: bold; font-size: 1.05rem; display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer; transition: background 0.2s; }
+.btn-checkout:hover { background-color: #1ebd58; }
+
+.cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 150; display: none; }
+.cart-overlay.active { display: block; }
+
+/* --- MODAL MERCADO PAGO --- */
+.mp-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); z-index: 300;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+.mp-modal-overlay.active { opacity: 1; pointer-events: auto; }
+.mp-modal-card { background-color: var(--white); width: 90%; max-width: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.mp-modal-header { background-color: #f5f5f5; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e5e5; }
+.mp-logo { font-size: 1.2rem; font-weight: bold; color: #0338a1; }
+.mp-logo span { color: var(--mp-blue); font-weight: normal; }
+.mp-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; }
+.mp-modal-body { padding: 25px 20px; }
+.mp-modal-body h3 { font-size: 1.3rem; margin-bottom: 8px; color: #333; }
+.mp-total-display { font-size: 1.1rem; margin-bottom: 20px; }
+.mp-total-display strong { color: var(--mp-blue); }
+.mp-form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
+.mp-form-group label { font-size: 0.85rem; font-weight: 600; color: #666; }
+.mp-form-group input { padding: 12px; border: 1px solid #ccc; border-radius: 6px; outline: none; font-size: 0.95rem; }
+.mp-form-group input:focus { border-color: var(--mp-blue); }
+.mp-btn-submit { background-color: var(--mp-blue); color: white; border: none; width: 100%; padding: 14px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
+.mp-btn-submit:hover { background-color: #007bb3; }
+/* LOGO DE BEBEPATITA
+/* Controlamos el tamaño máximo del contenedor del logo */
+.logo-img {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50px; /* Por si querés que el logo quede circular */
+}
+
+/* Forzamos a la imagen a que se adapte al contenedor sin deformarse */
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta y centra la imagen de forma perfecta */
+}
+
+/* Aseguramos que el contenedor del logo y el texto se alineen al centro */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Deja un espacio lindo entre la foto y el texto */
+}
+/*HASTA ACA LLEGA EL LOGO DE BEBEPATITA*/
+
+@media (max-width: 768px) { .hero { flex-direction: column; text-align: center; gap: 20px; } }

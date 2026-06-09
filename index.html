@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuberry Tiendita</title>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        ✨ Holiis!! Hacemos entregas los dias .... a las ....  💕
+    </div>
+
+    <header>
+        <div class="logo-container" id="logo-btn" style="cursor: pointer;">
+    <!-- Reemplazamos el emoji por la etiqueta de imagen -->
+    <div class="logo-img">
+       <img src="logo_patitapeluche.jpeg" alt="Logo Patita Peluche">
+    </div>
+    <div class="logo-text">Patita Peluche</div>
+</div>
+
+        <div class="header-actions">
+            <button class="nav-btn"><i class="far fa-user"></i></button>
+            <button class="nav-btn" id="open-cart-btn">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count" id="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div id="view-home" class="view-section">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Patita Peluche</h1>
+                    <p>Mi nombre es Narella pero me pueden decir "Nare". Tenemos miles de artículos bonitos y de calidad para vos.</p>
+                    <span class="badge"><i class="fab fa-tiktok"></i> @patitapeluche_</span>
+                </div>
+                <div class="hero-img-placeholder">🍓</div>
+            </section>
+
+            <h2 class="section-title">Categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="scoops"><div class="category-img">🥄</div><h3>Cartucheras</h3></div>
+                <div class="category-card" data-category="makeup"><div class="category-img">💄</div><h3>Llaveros</h3></div>
+                <div class="category-card" data-category="skincare"><div class="category-img">🧴</div><h3>Peluches</h3></div>
+                <div class="category-card" data-category="beauty"><div class="category-img">🎀</div><h3>Otros</h3></div>
+            </div>
+        </div>
+
+        <div id="view-products" class="view-section hidden">
+            <div class="back-navigation">
+                <button id="btn-back"><i class="fas fa-arrow-left"></i> Volver al Inicio</button>
+            </div>
+            <h2 class="section-title" id="current-category-title">Productos</h2>
+            <div class="products-grid" id="products-container"></div>
+        </div>
+
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Mi Carrito</h3>
+            <button class="close-cart" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+
+        <div class="payment-section">
+            <h4>Método de Pago:</h4>
+            <div class="payment-options">
+                <label class="payment-option-card">
+                    <input type="radio" name="payment-method" value="Efectivo" checked>
+                    <span class="custom-radio"></span>
+                    <i class="fas fa-money-bill-wave"></i> Efectivo / Retiro
+                </label>
+                <label class="payment-option-card">
+                    <input type="radio" name="payment-method" value="Mercado Pago">
+                    <span class="custom-radio"></span>
+                    <i class="fas fa-wallet"></i> Mercado Pago
+                </label>
+            </div>
+        </div>
+
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-amount">$0,00</span>
+        </div>
+        <button class="btn-checkout" id="btn-checkout">FINALIZAR PEDIDO <i class="fab fa-whatsapp"></i></button>
+    </div>
+
+    <div class="mp-modal-overlay" id="mp-modal">
+        <div class="mp-modal-card">
+            <div class="mp-modal-header">
+                <div class="mp-logo">🔵 mercado<span>pago</span></div>
+                <button class="mp-close" id="btn-close-mp">&times;</button>
+            </div>
+            <div class="mp-modal-body">
+                <h3>Pagar Pedido Patita Peluche</h3>
+                <p class="mp-total-display">Total a abonar: <strong id="mp-modal-total">$0,00</strong></p>
+                <form id="mp-mock-form">
+                    <div class="mp-form-group">
+                        <label>Número de Tarjeta o Alias / CVU</label>
+                        <input type="text" placeholder="1234 5678 9123 4567" required>
+                    </div>
+                    <div class="mp-form-group">
+                        <label>Nombre del Titular</label>
+                        <input type="text" placeholder="Juan Pérez" required>
+                    </div>
+                    <button type="submit" class="mp-btn-submit">Confirmar Pago Simulador</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
