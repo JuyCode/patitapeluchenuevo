@@ -9,10 +9,19 @@ const firebaseConfig = {
     measurementId: "G-TGKJ7NHD59"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+let db = null;
+try {
+    if (typeof firebase !== "undefined" && firebase.firestore) {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+    } else {
+        console.warn("Firebase no disponible: la tienda funciona igual, pero los pedidos no se guardan en la base de datos.");
+    }
+} catch (err) {
+    console.warn("Error inicializando Firebase:", err);
+}
 
-const VENDEDOR_WHATSAPP = "543884418917";
+const VENDEDOR_WHATSAPP = "543885830282";
 
 const productsDatabase = [
     // CARTUCHERAS
@@ -165,8 +174,9 @@ function galleryHTML(product, prefix) {
     `;
 }
 
-function updateGalleryDOM(key) {
-    const gallery = document.getElementById(`${key}-gallery`);
+function updateGalleryDOM(prefix, productId) {
+    const key = `${prefix}-${productId}`;
+    const gallery = document.getElementById(`${prefix}-gallery-${productId}`);
     if (!gallery) return;
     gallery.querySelectorAll('.gallery-slide').forEach(slide => {
         slide.classList.toggle('active', Number(slide.dataset.index) === galleryState[key]);
@@ -182,7 +192,7 @@ function changeSlide(prefix, productId, direction) {
     if (!product || !product.images || galleryState[key] === undefined) return;
     const total = product.images.length;
     galleryState[key] = (galleryState[key] + direction + total) % total;
-    updateGalleryDOM(key);
+    updateGalleryDOM(prefix, productId);
 }
 
 function setSlide(prefix, productId, index) {
@@ -192,7 +202,7 @@ function setSlide(prefix, productId, index) {
     const total = product.images.length;
     if (index < 0 || index >= total) return;
     galleryState[key] = index;
-    updateGalleryDOM(key);
+    updateGalleryDOM(prefix, productId);
 }
 
 // Controles de galería (flechas y puntos) — delegación en fase de captura
@@ -286,7 +296,10 @@ function updateCartUI() {
 
     container.innerHTML = cart.map(item => `
         <div class="cart-item">
-            <div class="cart-item-emoji">${item.emoji}</div>
+            ${item.images && item.images.length > 0
+                ? `<img src="${item.images[0]}" alt="${item.name}" class="cart-item-img">`
+                : `<div class="cart-item-emoji">${item.emoji}</div>`
+            }
             <div class="cart-item-details">
                 <div>
                     <div class="cart-item-title">${item.name}</div>
@@ -310,6 +323,7 @@ function closeCart() { cartDrawer.classList.remove('open'); cartOverlay.classLis
 
 document.getElementById('open-cart-btn').addEventListener('click', openCart);
 document.getElementById('close-cart-btn').addEventListener('click', closeCart);
+document.getElementById('btn-keep-shopping').addEventListener('click', closeCart);
 cartOverlay.addEventListener('click', closeCart);
 
 // --- CHECKOUT ---
@@ -324,6 +338,10 @@ async function saveOrderToDatabase(methodUsed, paymentStatus) {
     const orderId = Math.floor(1000 + Math.random() * 9000);
 
     try {
+        if (!db) {
+            triggerSecureWhatsApp(total);
+            return;
+        }
         await db.collection("pedidos").doc(orderId.toString()).set({
             detalles: itemsText,
             total: total,
@@ -331,24 +349,23 @@ async function saveOrderToDatabase(methodUsed, paymentStatus) {
             estado_pago: paymentStatus,
             fecha: firebase.firestore.FieldValue.serverTimestamp()
         });
-        triggerSecureWhatsApp(orderId, total, methodUsed);
+        triggerSecureWhatsApp(total);
     } catch (err) {
         console.error("Error guardando en Firestore:", err);
-        alert("Ocurrió un error al registrar el pedido.");
+        alert("No se pudo registrar el pedido en la base de datos, pero te vamos a redirigir a WhatsApp para completarlo.");
+        triggerSecureWhatsApp(total);
     }
 }
 
-function triggerSecureWhatsApp(orderId, total, methodUsed) {
+function triggerSecureWhatsApp(total) {
     let msg = ` *NUEVO PEDIDO - PATITA PELUCHE* \n\n`;
-    msg += `¡Hola! Acabo de confirmar mi compra en la web.\n\n`;
-    msg += ` *Orden de Pedido: #${orderId}\n`;
-    msg += ` *Monto Registrado:* $${total.toLocaleString('es-AR')},00\n`;
-    msg += ` *Forma de Pago:* ${methodUsed}\n\n`;
 
-    let itemsList = "";
-    cart.forEach(item => { itemsList += `• ${item.qty}x ${item.name} ($${(item.price * item.qty).toLocaleString('es-AR')},00)\n`; });
-    msg += `*Productos:*\n${itemsList}\n`;
-    msg += `Porfa, ingresá a tu consola con el número *#${orderId}* para validar y coordinar la entrega. 💕`;
+    cart.forEach(item => {
+        msg += `• ${item.qty}x ${item.name} - $${(item.price * item.qty).toLocaleString('es-AR')},00\n`;
+    });
+
+    msg += `\n*Total: $${total.toLocaleString('es-AR')},00*\n\n`;
+    msg += `¡Gracias por comprar en Patita Peluche! 💕`;
 
     window.open(`https://api.whatsapp.com/send?phone=${VENDEDOR_WHATSAPP}&text=${encodeURIComponent(msg)}`, '_blank');
     cart = []; updateCartUI(); closeCart(); showHomePage();
