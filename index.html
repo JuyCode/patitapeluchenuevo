@@ -3,97 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patita Peluche Tienda</title>
+    <title>Patita Peluche - Accesorios Adorables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="top-bar">
-        ✨ Holiis!! Hacemos entregas los dias .... a las ....  💕
-    </div>
-
     <header>
-        <div class="logo-container" id="logo-btn" style="cursor: pointer;">
-    <!-- Reemplazamos el emoji por la etiqueta de imagen -->
-    <div class="logo-img">
-       <img src="logo_patitapeluche.jpeg" alt="Logo Patita Peluche">
-    </div>
-    <div class="logo-text">Patita Peluche</div>
-</div>
-
-        <div class="header-actions">
-            <button class="nav-btn"><i class="far fa-user"></i></button>
-            <button class="nav-btn" id="open-cart-btn">
-                <i class="fas fa-shopping-basket"></i>
-                <span class="cart-count" id="cart-badge">0</span>
-            </button>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <div id="view-home" class="view-section">
-            <section class="hero">
-                <div class="hero-text">
-                    <h1>Patita Peluche</h1>
-                    <p>Mi nombre es Narella pero me pueden decir "Nare". Tenemos miles de artículos bonitos y de calidad para vos.</p>
-                    <span class="badge"><i class="fab fa-tiktok"></i> @patitapeluche_</span>
+        <div class="navbar">
+            <div class="nav-left">
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Categorías"><i class="fa-solid fa-bars"></i></button>
+                <div class="logo-container" id="logo-btn" style="cursor: pointer;">
+                    <div class="logo-img">
+                        <img src="logo_patitapeluche.jpeg" alt="Logo Patita Peluche">
+                    </div>
+                    <div class="logo-text">PatitaPeluche</div>
                 </div>
-                <div class="hero-img-placeholder">🍓</div>
-            </section>
-
-            <h2 class="section-title">Categorías</h2>
-            <div class="categories-grid">
-                <div class="category-card" data-category="scoops"><div class="category-img">🥄</div><h3>Cartucheras</h3></div>
-                <div class="category-card" data-category="makeup"><div class="category-img">💄</div><h3>Llaveros</h3></div>
-                <div class="category-card" data-category="skincare"><div class="category-img">🧴</div><h3>Peluches</h3></div>
-                <div class="category-card" data-category="beauty"><div class="category-img">🎀</div><h3>Otros</h3></div>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active" id="nav-home">Inicio</a>
+                <a href="#" id="nav-shop">Tienda</a>
+                <a href="#" id="nav-checkout">Pedido</a>
+            </nav>
+            <div class="cart-icon-container" id="open-cart-btn">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-badge" id="cart-badge-nav">0</span>
             </div>
         </div>
+        <nav class="mobile-menu" id="mobile-menu">
+            <a href="#" data-category="scoops"><i class="fa-solid fa-pencil"></i>Cartucheras</a>
+            <a href="#" data-category="makeup"><i class="fa-solid fa-key"></i>Llaveros</a>
+            <a href="#" data-category="skincare"><i class="fa-solid fa-heart"></i>Peluches</a>
+            <a href="#" data-category="beauty"><i class="fa-solid fa-gift"></i>Otros</a>
+        </nav>
+    </header>
 
-        <div id="view-products" class="view-section hidden">
+    <div id="view-home" class="view-section">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Patita Peluche</h1>
+                <h2>Accesorios Adorables para Todos</h2>
+                <p>Descubrí nuestra colección de peluches, llaveros kawaii y accesorios encantadores que alegran tu día a día.</p>
+                <a href="https://www.tiktok.com/@patitapeluche_" target="_blank" class="badge-tiktok" style="text-decoration: none;"><i class="fab fa-tiktok"></i> @patitapeluche_</a>
+                <a href="https://www.instagram.com/patitapeluche_?igsi=MXV3YXRhbDBxb3Zobw==" target="_blank" class="badge-tiktok" style="text-decoration: none; margin-left: 10px;"><i class="fab fa-instagram"></i> @patitapeluche_</a>
+                <br><br>
+                <button class="btn-pink" onclick="document.getElementById('tienda-section').scrollIntoView({behavior:'smooth'})">Ver Colección <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+            </div>
+        </section>
+
+        <section class="products-section" id="tienda-section">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Elegí lo que más te gusta</p>
+            <div class="products-grid" id="home-products-grid"></div>
+        </section>
+
+        <section class="cta-banner">
+            <h2>¿Listo para encontrar tu compañero adorable?</h2>
+            <p>Explorá nuestra colección completa de peluches, llaveros kawaii y accesorios encantadores.</p>
+            <button class="btn-pink" onclick="document.getElementById('tienda-section').scrollIntoView({behavior:'smooth'})">Comprar Ahora <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+        </section>
+    </div>
+
+    <div id="view-products" class="view-section hidden">
+        <section class="products-section" style="margin-top: 30px;">
             <div class="back-navigation">
                 <button id="btn-back"><i class="fas fa-arrow-left"></i> Volver al Inicio</button>
             </div>
             <h2 class="section-title" id="current-category-title">Productos</h2>
-            <div class="products-grid" id="products-container"></div>
-        </div>
-
+            <div class="products-grid" id="products-grid"></div>
+        </section>
     </div>
 
-    <div class="cart-overlay" id="cart-overlay"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>Mi Carrito</h3>
-            <button class="close-cart" id="close-cart-btn">&times;</button>
-        </div>
-        <div class="cart-items" id="cart-items-container"></div>
+    <div id="view-product-detail" class="view-section hidden">
+        <section class="products-section" style="margin-top: 30px;">
+            <div class="back-navigation">
+                <button id="btn-back-detail"><i class="fas fa-arrow-left"></i> Volver</button>
+            </div>
+            <div class="detail-container">
+                <div class="detail-gallery" id="detail-gallery"></div>
+                <div class="detail-info" id="detail-info"></div>
+            </div>
+        </section>
+    </div>
 
-        <div class="payment-section">
-            <h4>Método de Pago:</h4>
-            <div class="payment-options">
-                <label class="payment-option-card">
-                    <input type="radio" name="payment-method" value="Efectivo" checked>
-                    <span class="custom-radio"></span>
-                    <i class="fas fa-money-bill-wave"></i> Efectivo / Retiro
-                </label>
-                <label class="payment-option-card">
-                    <input type="radio" name="payment-method" value="Mercado Pago">
-                    <span class="custom-radio"></span>
-                    <i class="fas fa-wallet"></i> Mercado Pago
-                </label>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">PatitaPeluche</div>
+                <p>Accesorios adorables para todos. Traemos ternura y alegría a tu día a día con nuestra colección de peluches, llaveros y más.</p>
+                <a href="mailto:patitapeluchetienda@gmail.com" class="footer-email"><i class="fa-solid fa-envelope"></i> patitapeluchetienda@gmail.com</a>
+                <div class="footer-love">Hecho con <i class="fa-solid fa-heart"></i> para los amantes de lo cute</div>
+            </div>
+            <div class="footer-col" style="padding-left: 20px;">
+                <h4>Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showHomePage()">Inicio</a></li>
+                    <li><a href="#" onclick="document.getElementById('tienda-section').scrollIntoView({behavior:'smooth'})">Tienda</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="mailto:patitapeluchetienda@gmail.com">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Seguinos</h4>
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@patitapeluche_" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/patitapeluche_?igsi=MXV3YXRhbDBxb3Zobw==" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <p style="font-size: 13px;">¡Enterate de nuestras últimas novedades y ofertas!</p>
             </div>
         </div>
-
-        <div class="cart-total">
-            <span>Total:</span>
-            <span id="cart-total-amount">$0,00</span>
+        <div class="footer-bottom">
+            <div>© 2026 PatitaPeluche. Todos los derechos reservados.</div>
+            <div style="display: flex; gap: 15px;">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
         </div>
-        <button class="btn-checkout" id="btn-checkout">FINALIZAR PEDIDO <i class="fab fa-whatsapp"></i></button>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>Mi Carrito</h2>
+            <button class="close-cart-btn" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="payment-section">
+                <h4>Método de Pago:</h4>
+                <div class="payment-options">
+                    <label class="payment-option-card">
+                        <input type="radio" name="payment-method" value="Efectivo" checked>
+                        <span class="custom-radio"></span>
+                        <i class="fas fa-money-bill-wave"></i> Efectivo / Retiro
+                    </label>
+                    <label class="payment-option-card">
+                        <input type="radio" name="payment-method" value="Mercado Pago">
+                        <span class="custom-radio"></span>
+                        <i class="fas fa-wallet"></i> Mercado Pago
+                    </label>
+                </div>
+            </div>
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total-price">$0,00</span>
+            </div>
+            <button class="btn-checkout" id="btn-checkout">FINALIZAR PEDIDO <i class="fab fa-whatsapp"></i></button>
+            <div class="trust-markers">
+                <div class="trust-item"><i class="fa-solid fa-lock"></i> SSL Seguro</div>
+                <div class="trust-item"><i class="fa-solid fa-credit-card"></i> Pago Seguro</div>
+                <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> Protección al Cliente</div>
+                <div class="trust-item"><i class="fa-solid fa-rotate-left"></i> Garantía de Devolución</div>
+            </div>
+        </div>
     </div>
 
     <div class="mp-modal-overlay" id="mp-modal">
