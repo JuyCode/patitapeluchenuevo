@@ -35,40 +35,58 @@ const productsDatabase = [
       desc: "Cartucheras de Stitch súper adorables, ideales para el colegio o como cosmetiquera. Consultá por los diseños disponibles.",
       images: ["img/stitch-cartuchera-1.jpeg", "img/stitch-cartuchera-2.jpeg", "img/stitch-cartuchera-3.jpeg"] },
     { id: 26, name: "Cartucheras Gatitos", price: 14000, emoji: "🐱", category: "scoops", soldOut: false,
-      desc: "Cartucheras de gatitos súper tiernas, ideales para el colegio o como cosmetiquera. Disponibles solo en gris y negro.",
+      desc: "Cartucheras de gatitos súper tiernas, ideales para el colegio o como cosmetiquera.",
+      variants: ["Negro", "Gris"],
       images: ["img/gatitos-cartuchera-1.jpeg", "img/gatitos-cartuchera-2.jpeg", "img/gatitos-cartuchera-3.jpeg", "img/gatitos-cartuchera-4.jpeg"] },
     { id: 1, name: "Kitty Cartuchera/Cosmetiquero", price: 15800, emoji: "🎀", category: "scoops", soldOut: false },
-    { id: 2, name: "Pompompurin Cartuchera/Cosmetiquero (Diseño acostado)", price: 15800, emoji: "🍮", category: "scoops", soldOut: false },
-    { id: 3, name: "Ternurin Cartuchera/Cosmetiquero", price: 15000, emoji: "💕", category: "scoops", soldOut: false },
-    { id: 4, name: "Gatitos Cartucheras/Cosmetiquero (Gris, negro, marrón)", price: 15800, emoji: "🐱", category: "scoops", soldOut: false },
+    { id: 2, name: "Pompompurin Cartuchera/Cosmetiquero (Diseño acostado)", price: 15800, emoji: "🍮", category: "scoops", soldOut: true,
+      desc: "Cartuchera de Pompompurin diseño acostado, ideal para el colegio o como cosmetiquera. Súmer adorable y espaciosa.",
+      images: ["img/pompompurin-cartuchera-1.jpeg", "img/pompompurin-cartuchera-2.jpeg", "img/pompompurin-cartuchera-3.jpeg", "img/pompompurin-cartuchera-4.jpeg"] },
+    { id: 3, name: "Ternurin Cartuchera/Cosmetiquero", price: 15000, emoji: "💕", category: "scoops", soldOut: true,
+      desc: "Cartuchera de Ternurin súper tierna, ideal para el colegio o como cosmetiquera.",
+      images: ["img/ternurin-cartuchera-1.jpeg", "img/ternurin-cartuchera-2.jpeg", "img/ternurin-cartuchera-3.jpeg"] },
     { id: 5, name: "Snoopy Cartuchera", price: 15800, emoji: "🐶", category: "scoops", soldOut: true },
     { id: 6, name: "Cartuchera Stitch", price: 15800, emoji: "👽", category: "scoops", soldOut: false },
     { id: 7, name: "Cartuchera My Sweet Piano", price: 12000, emoji: "🎹", category: "scoops", soldOut: true },
     { id: 8, name: "Cartuchera Pompompurin (Cara redonda, cierre marrón)", price: 12000, emoji: "🌼", category: "scoops", soldOut: true },
-    { id: 9, name: "Neceser Pusheen Doble Compartimiento", price: 18000, emoji: "😺", category: "scoops", soldOut: true },
+    { id: 9, name: "Neceser Pusheen Doble Compartimiento", price: 18000, emoji: "😺", category: "scoops", soldOut: true,
+      desc: "Neceser de Pusheen con doble compartimiento, súper práctico y adorable.",
+      images: ["img/neceser-pusheen-1.jpeg", "img/neceser-pusheen-2.jpeg", "img/neceser-pusheen-3.jpeg", "img/neceser-pusheen-4.jpeg"] },
 
     // LLAVEROS
     { id: 21, name: "Ositos Cariñositos Llaveros", price: 9000, promo: "2 x $16.000", emoji: "🧸", category: "makeup", soldOut: false,
       desc: "Llaveros de los Ositos Cariñositos súper suaves y adorables. Ideales para regalar o coleccionar. ¡Llevando 2 aprovechás el precio especial!",
+      variants: ["Gruñonsito", "Divertosito", "Alegrosita", "Generosita"],
       images: ["img/ositos-carinositos-1.jpeg", "img/ositos-carinositos-2.jpeg", "img/ositos-carinositos-3.jpeg", "img/ositos-carinositos-4.jpeg", "img/ositos-carinositos-5.jpeg"] },
     { id: 24, name: "Kitty Llaveros", price: 8000, emoji: "🐱", category: "makeup", soldOut: false,
       desc: "Llaveros de Hello Kitty súper adorables, ideales para regalar o para tu llavero. Consultá por los diseños disponibles.",
       images: ["img/kitty-llavero-1.jpeg", "img/kitty-llavero-2.jpeg", "img/kitty-llavero-3.jpeg", "img/kitty-llavero-4.jpeg"] },
-    { id: 10, name: "Kitty Llavero (Peluche blanco con cadena dorada)", price: 8000, emoji: "⭐", category: "makeup", soldOut: false },
-    { id: 11, name: "Llaveritos Pusheen (Forma de dona)", price: 7500, emoji: "🍩", category: "makeup", soldOut: true },
-    { id: 12, name: "Pochacco y Gatito Negro (Peluche con antiparras)", price: 8000, emoji: "🕶️", category: "makeup", soldOut: true },
+    { id: 11, name: "Llaveritos Pusheen (Forma de dona)", price: 7500, emoji: "🍩", category: "makeup", soldOut: true,
+      desc: "Llaveritos de Pusheen forma de dona, súper suaves y adorables.",
+      images: ["img/pusheen-llaveros-1.jpeg", "img/pusheen-llaveros-2.jpeg", "img/pusheen-llaveros-3.jpeg"] },
+    { id: 12, name: "Pochacco y Gatito Negro (Peluche con antiparras)", price: 8000, emoji: "🕶️", category: "makeup", soldOut: true,
+      desc: "Llaveros de Pochacco y Gatito Negro con antiparras, súper originales y tiernos.",
+      images: ["img/gatito-pochacco-llavero-1.jpeg", "img/gatito-pochacco-llavero-2.jpeg", "img/gatito-pochacco-llavero-3.jpeg"] },
     { id: 13, name: "Ositos Cariñositos Llaveros", price: 8000, emoji: "🧸", category: "makeup", soldOut: true },
-    { id: 14, name: "Ty Beanie Boos Llavero (Ratoncita con brillos)", price: 6000, emoji: "✨", category: "makeup", soldOut: false },
-    { id: 15, name: "Gatitos de Chenille", price: 6500, emoji: "🐈", category: "makeup", soldOut: false },
-    { id: 16, name: "Nutrias Bebes Llavero", price: 6000, emoji: "🦦", category: "makeup", soldOut: false },
+    { id: 16, name: "Nutrias Bebes Llavero", price: 6000, emoji: "🦦", category: "makeup", soldOut: false,
+      desc: "Llaveros de nutrias bebés súper suaves y adorables. Ideales para regalar o para tu llavero.",
+      images: ["img/nutria-llavero-1.jpeg", "img/nutria-llavero-2.jpeg", "img/nutria-llavero-3.jpeg", "img/nutria-llavero-4.jpeg"] },
 
     // PELUCHES
-    { id: 17, name: "Pusheen Dragon (16x16 cm)", price: 16000, emoji: "🐉", category: "skincare", soldOut: true },
-    { id: 18, name: "Pusheen Galleta (18x14 cm)", price: 16000, emoji: "🍪", category: "skincare", soldOut: true },
-    { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true },
+    { id: 17, name: "Pusheen Dragon (16x16 cm)", price: 16000, emoji: "🐉", category: "skincare", soldOut: true,
+      desc: "Peluche de Pusheen dragón de 16x16 cm, súper suave y adorable.",
+      images: ["img/pusheen-peluche-1.jpeg"] },
+    { id: 18, name: "Pusheen Galleta (18x14 cm)", price: 16000, emoji: "🍪", category: "skincare", soldOut: true,
+      desc: "Peluche de Pusheen galleta de 18x14 cm, súper suave y adorable.",
+      images: ["img/pusheen-peluche-2.jpeg"] },
+    { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true,
+      desc: "Peluche de Pusheen león de 28x21 cm, súper suave y adorable.",
+      images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] },
 
     // OTROS
-    { id: 20, name: "Rilakkuma Monedero (Peluche de osito con galleta)", price: 7500, emoji: "🍯", category: "beauty", soldOut: false }
+    { id: 20, name: "Rilakkuma Monedero (Peluche de osito con galleta)", price: 7500, emoji: "🍯", category: "beauty", soldOut: false,
+      desc: "Monedero de Rilakkuma, peluche de osito con galleta. Súper tierno y práctico.",
+      images: ["img/rilakkuma-monedero-1.jpeg", "img/rilakkuma-monedero-2.jpeg"] }
 ];
 
 let cart = [];
@@ -147,9 +165,13 @@ function renderProductsList(productsList, gridElement) {
             ${product.promo && !product.soldOut ? `<span class="badge-promo"><i class="fa-solid fa-tags"></i> ${product.promo}</span>` : ''}
             ${product.soldOut
                 ? `<span class="badge-agotado"><i class="fa-solid fa-ban"></i> Agotado</span>`
-                : `<button class="btn-add-cart" onclick="addToCart(${product.id}); event.stopPropagation();">
-                    <i class="fa-solid fa-shopping-cart"></i> Agregar al Carrito
-                </button>`
+                : product.variants
+                    ? `<button class="btn-add-cart" onclick="openProductDetail(${product.id}); event.stopPropagation();">
+                        <i class="fa-solid fa-sliders"></i> Elegir Opciones
+                    </button>`
+                    : `<button class="btn-add-cart" onclick="addToCart(${product.id}); event.stopPropagation();">
+                        <i class="fa-solid fa-shopping-cart"></i> Agregar al Carrito
+                    </button>`
             }
         </div>
     `).join('');
@@ -209,34 +231,59 @@ function setSlide(prefix, productId, index) {
 document.addEventListener('click', (e) => {
     const arrow = e.target.closest('.gallery-arrow');
     const dot = e.target.closest('.gallery-dot');
-    if (!arrow && !dot) return;
-    e.stopPropagation();
-    const galleryEl = (arrow || dot).closest('.product-gallery');
-    const match = galleryEl && galleryEl.id.match(/^(.+)-gallery-(\d+)$/);
-    if (!match) return;
-    const prefix = match[1];
-    const productId = Number(match[2]);
-    if (arrow) {
-        changeSlide(prefix, productId, Number(arrow.dataset.dir));
-    } else {
-        setSlide(prefix, productId, Number(dot.dataset.index));
+    const vbtn = e.target.closest('.variant-btn');
+    const addBtn = e.target.closest('.btn-detail-add');
+
+    if (arrow || dot) {
+        e.stopPropagation();
+        const galleryEl = (arrow || dot).closest('.product-gallery');
+        const match = galleryEl && galleryEl.id.match(/^(.+)-gallery-(\d+)$/);
+        if (!match) return;
+        if (arrow) changeSlide(match[1], Number(match[2]), Number(arrow.dataset.dir));
+        else setSlide(match[1], Number(match[2]), Number(dot.dataset.index));
+        return;
+    }
+
+    if (vbtn) {
+        e.stopPropagation();
+        selectVariant(Number(vbtn.dataset.product), vbtn.dataset.variant, vbtn);
+        return;
+    }
+
+    if (addBtn) {
+        e.stopPropagation();
+        addToCartFromDetail(Number(addBtn.dataset.product));
+        return;
     }
 }, true);
 
 // --- DETALLE DE PRODUCTO ---
+let selectedVariants = {};
+
 function openProductDetail(id) {
     const product = productsDatabase.find(p => p.id === id);
     if (!product) return;
+
+    if (product.variants) {
+        selectedVariants[id] = product.variants[0];
+    }
+
+    const variantSelector = product.variants ? `
+        <div class="variant-label">Elegí tu osito:</div>
+        <div class="variant-selector" id="variant-selector-${product.id}">
+            ${product.variants.map((v, i) => `<button type="button" class="variant-btn ${i === 0 ? 'active' : ''}" data-variant="${v}" data-product="${product.id}">${v}</button>`).join('')}
+        </div>` : '';
 
     document.getElementById('detail-gallery').innerHTML = galleryHTML(product, 'detail');
     document.getElementById('detail-info').innerHTML = `
         ${product.promo && !product.soldOut ? `<span class="badge-promo" style="font-size: 0.85rem;"><i class="fa-solid fa-tags"></i> ${product.promo}</span>` : ''}
         <h2>${product.name}</h2>
         <div class="detail-price">$${product.price.toLocaleString('es-AR')},00</div>
+        ${variantSelector}
         <p class="detail-desc">${product.desc || 'Accesorio adorable de Patita Peluche, elegido con mucho amor. Consultá por diseños y colores disponibles.'}</p>
         ${product.soldOut
             ? `<span class="badge-agotado" style="width: auto;"><i class="fa-solid fa-ban"></i> Agotado</span>`
-            : `<button class="btn-add-cart btn-detail-add" onclick="addToCart(${product.id})">
+            : `<button class="btn-add-cart btn-detail-add" data-product="${product.id}">
                 <i class="fa-solid fa-shopping-cart"></i> Agregar al Carrito
             </button>`
         }
@@ -249,28 +296,54 @@ function openProductDetail(id) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function selectVariant(productId, variant, btn) {
+    selectedVariants[productId] = variant;
+    const selector = document.getElementById(`variant-selector-${productId}`);
+    selector.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+
+function addToCartFromDetail(id) {
+    const product = productsDatabase.find(p => p.id === id);
+    if (!product) return;
+    const variant = product.variants ? (selectedVariants[id] || product.variants[0]) : null;
+    addToCart(id, variant);
+}
+
 document.getElementById('btn-back-detail').addEventListener('click', showHomePage);
 
 // --- CARRITO ---
-function addToCart(id) {
+let cartUid = 0;
+
+function addToCart(id, variant) {
     const product = productsDatabase.find(p => p.id === id);
     if (!product) return;
-    const exist = cart.find(item => item.id === id);
-    if (exist) { exist.qty++; } else { cart.push({ ...product, qty: 1 }); }
+    const exist = cart.find(item => item.id === id && (item.variant || null) === (variant || null));
+    if (exist) { exist.qty++; }
+    else {
+        cartUid++;
+        cart.push({
+            ...product,
+            qty: 1,
+            variant: variant || null,
+            displayName: variant ? `${product.name} (${variant})` : product.name,
+            uid: cartUid
+        });
+    }
     updateCartUI();
     openCart();
 }
 
-function updateQty(id, change) {
-    const item = cart.find(item => item.id === id);
+function updateQty(uid, change) {
+    const item = cart.find(item => item.uid === uid);
     if (!item) return;
     item.qty += change;
-    if (item.qty <= 0) { cart = cart.filter(item => item.id !== id); }
+    if (item.qty <= 0) { cart = cart.filter(item => item.uid !== uid); }
     updateCartUI();
 }
 
-function removeItem(id) {
-    cart = cart.filter(item => item.id !== id);
+function removeItem(uid) {
+    cart = cart.filter(item => item.uid !== uid);
     updateCartUI();
 }
 
@@ -297,21 +370,21 @@ function updateCartUI() {
     container.innerHTML = cart.map(item => `
         <div class="cart-item">
             ${item.images && item.images.length > 0
-                ? `<img src="${item.images[0]}" alt="${item.name}" class="cart-item-img">`
+                ? `<img src="${item.images[0]}" alt="${item.displayName}" class="cart-item-img">`
                 : `<div class="cart-item-emoji">${item.emoji}</div>`
             }
             <div class="cart-item-details">
                 <div>
-                    <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-item-title">${item.displayName}</div>
                     <div class="cart-item-meta">$${item.price.toLocaleString('es-AR')},00 c/u</div>
                 </div>
                 <div class="cart-item-bottom">
                     <div class="quantity-controls">
-                        <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                        <button class="qty-btn" onclick="updateQty(${item.uid}, -1)">-</button>
                         <span class="qty-val">${item.qty}</span>
-                        <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                        <button class="qty-btn" onclick="updateQty(${item.uid}, 1)">+</button>
                     </div>
-                    <button class="btn-remove-item" onclick="removeItem(${item.id})">Eliminar</button>
+                    <button class="btn-remove-item" onclick="removeItem(${item.uid})">Eliminar</button>
                 </div>
             </div>
         </div>
@@ -331,7 +404,7 @@ async function saveOrderToDatabase(methodUsed, paymentStatus) {
     const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
     const summaryCount = {};
-    cart.forEach(item => { summaryCount[item.name] = (summaryCount[item.name] || 0) + item.qty; });
+    cart.forEach(item => { summaryCount[item.displayName || item.name] = (summaryCount[item.displayName || item.name] || 0) + item.qty; });
     let itemsText = "";
     for (const [name, qty] of Object.entries(summaryCount)) { itemsText += `${qty}x ${name} | `; }
 
@@ -361,7 +434,7 @@ function triggerSecureWhatsApp(total) {
     let msg = ` *NUEVO PEDIDO - PATITA PELUCHE* \n\n`;
 
     cart.forEach(item => {
-        msg += `• ${item.qty}x ${item.name} - $${(item.price * item.qty).toLocaleString('es-AR')},00\n`;
+        msg += `• ${item.qty}x ${item.displayName || item.name} - $${(item.price * item.qty).toLocaleString('es-AR')},00\n`;
     });
 
     msg += `\n*Total: $${total.toLocaleString('es-AR')},00*\n\n`;

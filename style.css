@@ -227,6 +227,17 @@ header { position: relative; }
 .detail-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 25px; }
 .btn-detail-add { max-width: 320px; }
 
+/* --- SELECTOR DE VARIANTES --- */
+.variant-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+.variant-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.variant-btn {
+    background-color: #ffffff; border: 2px solid #f0d5e2; color: var(--text-dark);
+    padding: 8px 16px; border-radius: 20px; font-family: inherit;
+    font-size: 13px; font-weight: 600; cursor: pointer; transition: var(--transition);
+}
+.variant-btn:hover { border-color: var(--primary-pink); }
+.variant-btn.active { background-color: var(--primary-pink); border-color: var(--primary-pink); color: white; }
+
 @media (max-width: 768px) {
     .detail-container { grid-template-columns: 1fr; gap: 20px; }
     .detail-gallery .product-gallery { height: 300px; }
@@ -288,6 +299,17 @@ footer { background-color: #ffffff; border-top: 1px solid #f0f0f0; padding: 60px
     transition: var(--transition);
 }
 .footer-email:hover { color: var(--primary-pink); }
+
+/* --- BOTON WHATSAPP FLONTANTE --- */
+.whatsapp-float-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 60px; height: 60px; border-radius: 50%;
+    background-color: #25d366; color: white;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: var(--transition); z-index: 900; text-decoration: none;
+}
+.whatsapp-float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
 .footer-col h4 { font-size: 16px; font-weight: 600; margin-bottom: 15px; }
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 10px; font-size: 14px; color: var(--text-muted); }
