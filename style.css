@@ -166,7 +166,7 @@ header { position: relative; }
 
 .product-card {
     background: #ffffff; border: 1px solid #f0f0f0; border-radius: var(--border-radius);
-    overflow: hidden; text-align: left; padding: 15px; transition: var(--transition);
+    text-align: left; padding: 15px; transition: var(--transition);
 }
 .product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
@@ -187,7 +187,7 @@ header { position: relative; }
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover; opacity: 0; transition: opacity 0.35s ease;
 }
-.gallery-slide.active { opacity: 1; }
+.gallery-slide.active { opacity: 1 !important; }
 .gallery-arrow {
     position: absolute; top: 50%; transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.85); border: none; color: var(--pink-accent);
