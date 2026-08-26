@@ -28,9 +28,6 @@ const productsDatabase = [
     { id: 22, name: "Cartuchera Cinnamoroll", price: 12000, emoji: "☁️", category: "scoops", soldOut: false,
       desc: "Cartuchera de Cinnamoroll, ideal para el colegio o como cosmetiquera. Espaciosa y súper adorable.",
       images: ["img/cinnamoroll-cartuchera.jpeg"] },
-    { id: 23, name: "Kitty Cartuchera/Cosmetiquero", price: 14000, emoji: "🎀", category: "scoops", soldOut: false,
-      desc: "Cartuchera de Hello Kitty súper tierna, ideal para el colegio o como cosmetiquera.",
-      images: ["img/kitty-cartuchera-1.jpeg", "img/kitty-cartuchera-2.jpeg"] },
     { id: 25, name: "Cartuchera Stitch", price: 14000, emoji: "👽", category: "scoops", soldOut: false,
       desc: "Cartuchera de Stitch súper adorables, ideales para el colegio o como cosmetiquera. Consultá por los diseños disponibles.",
       images: ["img/stitch-cartuchera-1.jpeg", "img/stitch-cartuchera-2.jpeg", "img/stitch-cartuchera-3.jpeg"] },
@@ -46,7 +43,6 @@ const productsDatabase = [
       desc: "Cartuchera de Ternurin súper tierna, ideal para el colegio o como cosmetiquera.",
       images: ["img/ternurin-cartuchera-1.jpeg", "img/ternurin-cartuchera-2.jpeg", "img/ternurin-cartuchera-3.jpeg"] },
     { id: 5, name: "Snoopy Cartuchera", price: 15800, emoji: "🐶", category: "scoops", soldOut: true },
-    { id: 6, name: "Cartuchera Stitch", price: 15800, emoji: "👽", category: "scoops", soldOut: false },
     { id: 7, name: "Cartuchera My Sweet Piano", price: 12000, emoji: "🎹", category: "scoops", soldOut: true },
     { id: 8, name: "Cartuchera Pompompurin (Cara redonda, cierre marrón)", price: 12000, emoji: "🌼", category: "scoops", soldOut: true },
     { id: 9, name: "Neceser Pusheen Doble Compartimiento", price: 18000, emoji: "😺", category: "scoops", soldOut: true,
@@ -68,9 +64,6 @@ const productsDatabase = [
       desc: "Llaveros de Pochacco y Gatito Negro con antiparras, súper originales y tiernos.",
       images: ["img/gatito-pochacco-llavero-1.jpeg", "img/gatito-pochacco-llavero-2.jpeg", "img/gatito-pochacco-llavero-3.jpeg"] },
     { id: 13, name: "Ositos Cariñositos Llaveros", price: 8000, emoji: "🧸", category: "makeup", soldOut: true },
-    { id: 16, name: "Nutrias Bebes Llavero", price: 6000, emoji: "🦦", category: "makeup", soldOut: false,
-      desc: "Llaveros de nutrias bebés súper suaves y adorables. Ideales para regalar o para tu llavero.",
-      images: ["img/nutria-llavero-1.jpeg", "img/nutria-llavero-2.jpeg", "img/nutria-llavero-3.jpeg", "img/nutria-llavero-4.jpeg"] },
 
     // PELUCHES
     { id: 17, name: "Pusheen Dragon (16x16 cm)", price: 16000, emoji: "🐉", category: "skincare", soldOut: true,
@@ -81,12 +74,7 @@ const productsDatabase = [
       images: ["img/pusheen-peluche-2.jpeg"] },
     { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true,
       desc: "Peluche de Pusheen león de 28x21 cm, súper suave y adorable.",
-      images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] },
-
-    // OTROS
-    { id: 20, name: "Rilakkuma Monedero (Peluche de osito con galleta)", price: 7500, emoji: "🍯", category: "beauty", soldOut: false,
-      desc: "Monedero de Rilakkuma, peluche de osito con galleta. Súper tierno y práctico.",
-      images: ["img/rilakkuma-monedero-1.jpeg", "img/rilakkuma-monedero-2.jpeg"] }
+      images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] }
 ];
 
 let cart = [];
