@@ -67,7 +67,8 @@ const productsDatabase = [
     { id: 12, name: "Pochacco y Gatito Negro", price: 8000, emoji: "🕶️", category: "makeup", soldOut: true,
       desc: "Llaveros de Pochacco y Gatito Negro, súper originales y tiernos.",
       images: ["img/gatito-pochacco-llavero-1.jpeg", "img/gatito-pochacco-llavero-2.jpeg", "img/gatito-pochacco-llavero-3.jpeg"] },
-    { id: 13, name: "Ositos Cariñositos Llaveros", price: 8000, emoji: "🧸", category: "makeup", soldOut: true },
+    { id: 13, name: "Ositos Cariñositos Llaveros", price: 8000, emoji: "🧸", category: "makeup", soldOut: true,
+      images: ["img/ositos-llaveros-1.jpeg", "img/ositos-llaveros-2.jpeg", "img/ositos-llaveros-3.jpeg", "img/ositos-llaveros-4.jpeg", "img/ositos-llaveros-5.jpeg"] },
 
     // PELUCHES
     { id: 17, name: "Pusheen Dragon (16x16 cm)", price: 16000, emoji: "🐉", category: "skincare", soldOut: true,
