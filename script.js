@@ -140,9 +140,10 @@ document.getElementById('nav-checkout').addEventListener('click', (e) => { e.pre
 // --- RENDER PRODUCTOS ---
 function renderProductsList(productsList, gridElement) {
     const targetGrid = gridElement || document.getElementById('home-products-grid');
-    const sorted = [...productsList].sort((a, b) =>
-        (b.images && b.images.length > 0 ? 1 : 0) - (a.images && a.images.length > 0 ? 1 : 0)
-    );
+    const sorted = [...productsList].sort((a, b) => {
+        if (a.soldOut !== b.soldOut) return a.soldOut ? 1 : -1;
+        return (b.images && b.images.length > 0 ? 1 : 0) - (a.images && a.images.length > 0 ? 1 : 0);
+    });
     targetGrid.innerHTML = sorted.map(product => `
         <div class="product-card ${product.soldOut ? 'sold-out' : ''}" onclick="openProductDetail(${product.id})">
             ${galleryHTML(product, 'card')}
