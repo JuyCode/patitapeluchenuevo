@@ -37,8 +37,8 @@ const productsDatabase = [
       images: ["img/gatitos-cartuchera-1.jpeg", "img/gatitos-cartuchera-2.jpeg", "img/gatitos-cartuchera-3.jpeg", "img/gatitos-cartuchera-4.jpeg"] },
     { id: 1, name: "Cartuchera Kitty", price: 15800, emoji: "🎀", category: "scoops", soldOut: false,
       images: ["img/kitty-cartuchera-1.jpeg", "img/kitty-cartuchera-2.jpeg"] },
-    { id: 2, name: "Cartuchera Pompompurin (Acostado)", price: 15800, emoji: "🍮", category: "scoops", soldOut: true,
-      desc: "Cartuchera de Pompompurin diseño acostado, ideal para el colegio o como cosmetiquera. Súmer adorable y espaciosa.",
+    { id: 2, name: "Cartuchera Pompompurin", price: 15800, emoji: "🍮", category: "scoops", soldOut: true,
+      desc: "Cartuchera de Pompompurin, ideal para el colegio o como cosmetiquera. Súmer adorable y espaciosa.",
       images: ["img/pompompurin-cartuchera-1.jpeg", "img/pompompurin-cartuchera-2.jpeg", "img/pompompurin-cartuchera-3.jpeg", "img/pompompurin-cartuchera-4.jpeg"] },
     { id: 3, name: "Cartuchera Ternurin", price: 15000, emoji: "💕", category: "scoops", soldOut: true,
       desc: "Cartuchera de Ternurin súper tierna, ideal para el colegio o como cosmetiquera.",
@@ -48,7 +48,7 @@ const productsDatabase = [
       images: ["img/piano-cartuchera-1.jpeg"] },
     { id: 8, name: "Cartuchera Pompompurin", price: 12000, emoji: "🌼", category: "scoops", soldOut: true },
     { id: 9, name: "Neceser Pusheen", price: 18000, emoji: "😺", category: "scoops", soldOut: true,
-      desc: "Neceser de Pusheen con doble compartimiento, súper práctico y adorable.",
+      desc: "Neceser de Pusheen, súper práctico y adorable.",
       images: ["img/neceser-pusheen-1.jpeg", "img/neceser-pusheen-2.jpeg", "img/neceser-pusheen-3.jpeg", "img/neceser-pusheen-4.jpeg"] },
 
     // LLAVEROS
@@ -60,10 +60,10 @@ const productsDatabase = [
       desc: "Llaveros de Hello Kitty súper adorables, ideales para regalar o para tu llavero. Consultá por los diseños disponibles.",
       images: ["img/kitty-llavero-1.jpeg", "img/kitty-llavero-2.jpeg", "img/kitty-llavero-3.jpeg", "img/kitty-llavero-4.jpeg"] },
     { id: 11, name: "Llaverito Pusheen", price: 7500, emoji: "🍩", category: "makeup", soldOut: true,
-      desc: "Llaveritos de Pusheen forma de dona, súper suaves y adorables.",
+      desc: "Llaveritos de Pusheen, súper suaves y adorables.",
       images: ["img/pusheen-llaveros-1.jpeg", "img/pusheen-llaveros-2.jpeg", "img/pusheen-llaveros-3.jpeg"] },
-    { id: 12, name: "Pochacco y Gatito Negro (Peluche con antiparras)", price: 8000, emoji: "🕶️", category: "makeup", soldOut: true,
-      desc: "Llaveros de Pochacco y Gatito Negro con antiparras, súper originales y tiernos.",
+    { id: 12, name: "Pochacco y Gatito Negro", price: 8000, emoji: "🕶️", category: "makeup", soldOut: true,
+      desc: "Llaveros de Pochacco y Gatito Negro, súper originales y tiernos.",
       images: ["img/gatito-pochacco-llavero-1.jpeg", "img/gatito-pochacco-llavero-2.jpeg", "img/gatito-pochacco-llavero-3.jpeg"] },
     { id: 13, name: "Ositos Cariñositos Llaveros", price: 8000, emoji: "🧸", category: "makeup", soldOut: true },
 
