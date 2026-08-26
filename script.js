@@ -37,7 +37,7 @@ const productsDatabase = [
       images: ["img/gatitos-cartuchera-1.jpeg", "img/gatitos-cartuchera-2.jpeg", "img/gatitos-cartuchera-3.jpeg", "img/gatitos-cartuchera-4.jpeg"] },
     { id: 1, name: "Cartuchera Kitty", price: 15800, emoji: "🎀", category: "scoops", soldOut: false,
       images: ["img/kitty-cartuchera-1.jpeg", "img/kitty-cartuchera-2.jpeg"] },
-    { id: 2, name: "Cartuchera Pompompurin", price: 15800, emoji: "🍮", category: "scoops", soldOut: true,
+    { id: 2, name: "Cartuchera Pompompurin Peluche", price: 15800, emoji: "🍮", category: "scoops", soldOut: true,
       desc: "Cartuchera de Pompompurin, ideal para el colegio o como cosmetiquera. Súmer adorable y espaciosa.",
       images: ["img/pompompurin-cartuchera-1.jpeg", "img/pompompurin-cartuchera-2.jpeg", "img/pompompurin-cartuchera-3.jpeg", "img/pompompurin-cartuchera-4.jpeg"] },
     { id: 3, name: "Cartuchera Ternurin", price: 15000, emoji: "💕", category: "scoops", soldOut: true,
