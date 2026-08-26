@@ -44,11 +44,11 @@ const productsDatabase = [
       desc: "Cartuchera de Ternurin súper tierna, ideal para el colegio o como cosmetiquera.",
       images: ["img/ternurin-cartuchera-1.jpeg", "img/ternurin-cartuchera-2.jpeg", "img/ternurin-cartuchera-3.jpeg"] },
     { id: 5, name: "Snoopy Cartuchera", price: 15800, emoji: "🐶", category: "scoops", soldOut: true,
-      images: ["img/snoopy-cartuchera-1.jpeg", "img/snoopy-cartuchera-2.jpeg", "img/snoopy-cartuchera-3.jpeg", "img/snoopy-cartuchera-4.jpeg"] },
+      images: ["img/pompompurin-cartuchera-5.jpeg"] },
     { id: 7, name: "Cartuchera My Sweet Piano", price: 12000, emoji: "🎹", category: "scoops", soldOut: true,
       images: ["img/piano-cartuchera-1.jpeg"] },
     { id: 8, name: "Cartuchera Pompompurin", price: 12000, emoji: "🌼", category: "scoops", soldOut: true,
-      images: ["img/pompompurin-cartuchera-5.jpeg", "img/pompompurin-cartuchera-6.jpeg"] },
+      images: ["img/snoopy-cartuchera-1.jpeg", "img/pompompurin-cartuchera-6.jpeg"] },
     { id: 9, name: "Neceser Pusheen", price: 18000, emoji: "😺", category: "scoops", soldOut: true,
       desc: "Neceser de Pusheen, súper práctico y adorable.",
       images: ["img/neceser-pusheen-1.jpeg", "img/neceser-pusheen-2.jpeg", "img/neceser-pusheen-3.jpeg", "img/neceser-pusheen-4.jpeg"] },
@@ -57,7 +57,7 @@ const productsDatabase = [
     { id: 21, name: "Ositos Cariñositos Llaveros", price: 9000, promo: "2 x $16.000", emoji: "🧸", category: "makeup", soldOut: false,
       desc: "Llaveros de los Ositos Cariñositos súper suaves y adorables. Ideales para regalar o coleccionar. ¡Llevando 2 aprovechás el precio especial!",
       variants: ["Gruñonsito", "Divertosito", "Alegrosita", "Generosita"],
-      images: ["img/ositos-carinositos-1.jpeg", "img/ositos-carinositos-2.jpeg", "img/ositos-carinositos-3.jpeg", "img/ositos-carinositos-4.jpeg", "img/ositos-carinositos-5.jpeg", "img/ositos-carinositos-6.jpeg", "img/ositos-carinositos-7.jpeg", "img/ositos-carinositos-8.jpeg", "img/ositos-carinositos-9.jpeg", "img/ositos-carinositos-10.jpeg"] },
+      images: ["img/ositos-carinositos-1.jpeg", "img/ositos-carinositos-2.jpeg", "img/ositos-carinositos-3.jpeg", "img/ositos-carinositos-4.jpeg", "img/ositos-carinositos-5.jpeg", "img/ositos-carinositos-6.jpeg", "img/ositos-carinositos-7.jpeg", "img/ositos-carinositos-8.jpeg", "img/ositos-carinositos-9.jpeg", "img/ositos-carinositos-10.jpeg", "img/pusheen-peluche-leon-1.jpeg", "img/pusheen-peluche-leon-2.jpeg", "img/snoopy-cartuchera-2.jpeg", "img/snoopy-cartuchera-3.jpeg", "img/snoopy-cartuchera-4.jpeg"] },
     { id: 24, name: "Kitty Llaveros", price: 8000, emoji: "🐱", category: "makeup", soldOut: false,
       desc: "Llaveros de Hello Kitty súper adorables, ideales para regalar o para tu llavero. Consultá por los diseños disponibles.",
       images: ["img/kitty-llavero-1.jpeg", "img/kitty-llavero-2.jpeg", "img/kitty-llavero-3.jpeg", "img/kitty-llavero-4.jpeg"] },
@@ -76,9 +76,7 @@ const productsDatabase = [
     { id: 18, name: "Pusheen Galleta (18x14 cm)", price: 16000, emoji: "🍪", category: "skincare", soldOut: true,
       desc: "Peluche de Pusheen galleta de 18x14 cm, súper suave y adorable.",
       images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] },
-    { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true,
-      desc: "Peluche de Pusheen león de 28x21 cm, súper suave y adorable.",
-      images: ["img/pusheen-peluche-leon-1.jpeg", "img/pusheen-peluche-leon-2.jpeg"] }
+    { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true }
 ];
 
 let cart = [];
