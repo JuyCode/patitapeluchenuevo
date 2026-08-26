@@ -57,7 +57,7 @@ const productsDatabase = [
     { id: 21, name: "Ositos Cariñositos Llaveros", price: 9000, promo: "2 x $16.000", emoji: "🧸", category: "makeup", soldOut: false,
       desc: "Llaveros de los Ositos Cariñositos súper suaves y adorables. Ideales para regalar o coleccionar. ¡Llevando 2 aprovechás el precio especial!",
       variants: ["Gruñonsito", "Divertosito", "Alegrosita", "Generosita"],
-      images: ["img/ositos-carinositos-1.jpeg", "img/ositos-carinositos-2.jpeg", "img/ositos-carinositos-3.jpeg", "img/ositos-carinositos-4.jpeg", "img/ositos-carinositos-5.jpeg", "img/ositos-carinositos-6.jpeg", "img/ositos-carinositos-7.jpeg", "img/ositos-carinositos-8.jpeg", "img/ositos-carinositos-9.jpeg", "img/ositos-carinositos-10.jpeg", "img/pusheen-peluche-leon-1.jpeg", "img/pusheen-peluche-leon-2.jpeg", "img/snoopy-cartuchera-2.jpeg", "img/snoopy-cartuchera-3.jpeg", "img/snoopy-cartuchera-4.jpeg"] },
+      images: ["img/ositos-carinositos-1.jpeg", "img/ositos-carinositos-2.jpeg", "img/ositos-carinositos-3.jpeg", "img/ositos-carinositos-4.jpeg", "img/ositos-carinositos-5.jpeg"] },
     { id: 24, name: "Kitty Llaveros", price: 8000, emoji: "🐱", category: "makeup", soldOut: false,
       desc: "Llaveros de Hello Kitty súper adorables, ideales para regalar o para tu llavero. Consultá por los diseños disponibles.",
       images: ["img/kitty-llavero-1.jpeg", "img/kitty-llavero-2.jpeg", "img/kitty-llavero-3.jpeg", "img/kitty-llavero-4.jpeg"] },
@@ -79,7 +79,10 @@ const productsDatabase = [
       images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] },
     { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true,
       desc: "Peluche de Pusheen león de 28x21 cm, súper suave y adorable.",
-      images: ["img/pusheen-peluche-leon-1.jpeg", "img/pusheen-peluche-leon-2.jpeg"] }
+      images: ["img/pusheen-peluche-leon-1.jpeg", "img/pusheen-peluche-leon-2.jpeg"] },
+    { id: 29, name: "Pinkie Pie con Manta 60cm", price: 33000, emoji: "🦄", category: "skincare", soldOut: false,
+      desc: "Pinkie Pie con manta de 60cm, súper suave y abrigadora.",
+      images: ["img/pinkiepie-manta-1.jpeg", "img/pinkiepie-manta-2.jpeg", "img/pinkiepie-manta-3.jpeg", "img/pinkiepie-manta-4.jpeg"] }
 ];
 
 let cart = [];
