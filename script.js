@@ -71,10 +71,10 @@ const productsDatabase = [
       images: ["img/pusheen-peluche-1.jpeg"] },
     { id: 18, name: "Pusheen Galleta (18x14 cm)", price: 16000, emoji: "🍪", category: "skincare", soldOut: true,
       desc: "Peluche de Pusheen galleta de 18x14 cm, súper suave y adorable.",
-      images: ["img/pusheen-peluche-2.jpeg"] },
+      images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] },
     { id: 19, name: "Pusheen León (28x21 cm)", price: 18000, emoji: "🦁", category: "skincare", soldOut: true,
       desc: "Peluche de Pusheen león de 28x21 cm, súper suave y adorable.",
-      images: ["img/pusheen-peluche-3.jpeg", "img/pusheen-peluche-4.jpeg"] }
+      images: ["img/pusheen-peluche-2.jpeg"] }
 ];
 
 let cart = [];
